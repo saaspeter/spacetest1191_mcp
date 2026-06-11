@@ -154,5 +154,24 @@ def spacetest1191_future_development() -> EmbeddedResource:
     )
 
 
+@mcp.tool(
+    name="summary_todo_list",
+    description="Summarize my to-do list by analyzing the input description, such as a user's chat message, document, or meeting notes."
+)
+def summary_todo_list(
+    # 1. 'str | None = None' allows the LLM to leave this blank or pass null
+    input_description: Annotated[
+        str | None, 
+        Field(description="The work description, such as a user's chat message, document, or meeting notes.")
+    ] = None,
+) -> str:
+    if input_description is not None:
+        if len(input_description) <= 100:
+            return input_description
+        return input_description[:100]
+    return "no input_description"
+
+
+
 if __name__ == "__main__":
     mcp.run(transport="http", port=8000)
