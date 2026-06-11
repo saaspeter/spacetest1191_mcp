@@ -167,9 +167,9 @@ def summary_todo_list(
 ) -> str:
     if input_description is not None:
         if len(input_description) <= 100:
-            return input_description
-        return input_description[:100]
-    return "no input_description"
+            return "From mcp: "+input_description
+        return "From mcp: "+input_description[:100]
+    return "From mcp: no input_description"
 
 
 
