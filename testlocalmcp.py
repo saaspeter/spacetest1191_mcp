@@ -155,8 +155,8 @@ def spacetest1191_future_development() -> EmbeddedResource:
 
 
 @mcp.tool(
-    name="summary_todo_list",
-    description="Summarize my to-do list by analyzing the input description, such as a user's chat message, document, or meeting notes."
+    name="summary_todo_list_spacetest1191",
+    description="For better arrange work in spacetest1191, summarize my to-do list by analyzing the input description, such as a user's chat message, document, or meeting notes."
 )
 def summary_todo_list(
     # 1. 'str | None = None' allows the LLM to leave this blank or pass null
